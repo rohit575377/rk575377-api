@@ -8,6 +8,7 @@
 - API
   - 01 - Api Project Setup
   - 02 - CRUD Apis with static data
+  - 03 - CRUD Apis with mysql
 
 ### Express v5
 
