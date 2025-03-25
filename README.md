@@ -12,7 +12,7 @@
   - 04 - CRUD APIs with mysql2 using promise ✔️
   - 05 - CRUD APIs with pg using pool ✔️
   - 06 - CRUD APIs with pg using client 🔥
-  - 07 - MVC folder structure CRUD APIs with Sequelize ORM + mysql
+  - 07 - MVC folder structure CRUD APIs with Sequelize ORM + mysql ✔️
   - 08 - MVC folder structure CRUD APIs with Sequelize ORM + postgres
   - 09 - MVC folder structure CRUD APIs with Prisma ORM + mysql
   - 10 - MVC folder structure CRUD APIs with Prisma ORM + postgres
