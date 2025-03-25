@@ -1,0 +1,190 @@
+<pre style="margin: 25px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+
+My Rules:
+- Always use async/await
+- Always use try/catch
+- Always use destructuring
+- Always use .env
+- Always use .gitignore
+- use camelCase for variable names
+- use camelCase for function names
+- use snake_case for table names
+- use snake_case for column names
+- use snake_case for database names
+- use snake_case for environment variables
+- use kabab-case for API endpoints
+- use "" for strings
+- use semicolons for statements
+- model name should be singular
+- table name should be plural
+- file name should be
+  - db.config.js
+  - user.controller.js
+  - user.routes.js
+  - user.model.js
+  - user.service.js
+  - user.repository.js
+- folder name should be
+  - controllers
+  - routes
+  - models
+  - services
+  - repositories
+- database name should be
+  - db_name
+- table name should be
+  - table_name
+- column name should be
+  - column_name
+- environment variable name should be
+  - DB_NAME
+- environment variable value should be
+  - db_name
+
+- get data in request camelCase
+- send data in response camelCase
+
+- response code examples
+  res.status();
+  res.send();
+  res.json();
+  res.render();
+
+  res.status(200).json({ message: "Ok" });
+  res.status(201).json({ message: "Created" });
+
+- response examples
+  <!-- 200, 201 -->
+  { message: "Ok" }
+  { success: true, message: "Ok" }
+  { success: true, message: "Ok", users }
+  { success: true, message: "Ok", data: users }
+
+  <!-- 400, 404 -->
+  { success: false, message: "Bad request" }
+  { success: false, message: "Not found" }
+
+  <!-- 500 -->
+  { error: "Internal server error" }
+  { success: false, message: "Internal server error" }
+  { success: false, message: "Internal server error", error }
+  { success: false, message: "Internal server error", error: error.message }
+  { success: false, message: "Internal server error", error: error.message, stack: error.stack }
+
+mysql2 : MySQL
+  - https://sidorares.github.io/node-mysql2/docs
+
+pg : Postgres
+  - https://www.npmjs.com/package/pg
+  - https://node-postgres.com/
+
+  CREATE TABLE "users" (
+    "id" SERIAL PRIMARY KEY,
+    "name" varchar(255) DEFAULT NULL,
+    "age" int DEFAULT NULL,
+    "address" varchar(255) DEFAULT NULL,
+    "gender" varchar(255) DEFAULT NULL
+  );
+
+------------------------------------------------
+sequelize
+.authenticate()
+.then(() => console.log('Connection has been established successfully.'))
+.then(async () => {
+  await sequelize.sync({ force: true });
+  console.log('All models were synchronized successfully.');
+})
+.catch(err => console.error('Unable to connect to the database:', err));
+
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => {
+  console.log(`API is running on port ${PORT}`);
+});
+
+Model humesha promise return karte hai
+
+
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer;">
+  <!-- <a href="sequelize.png">show image</a> -->
+  <!-- <img src="sequelize.png" width="50%" alt=""> -->
+  <a href="sequelize.png" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <img src="sequelize.png" style="width: 100%;" alt="">
+  </a>
+</div>
+
+Timestamps
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer;">
+  <a href="sequelize-timestamps.png" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <img src="sequelize-timestamps.png" style="width: 100%;" alt="">
+  </a>
+</div>
+
+Model Schema
+  Model.sync()
+  Model.sync({ force: true })
+  
+  {
+    timestamps: true,
+    underscored: true,
+    freezeTableName: true
+  }
+
+Model Query
+
+Model.build()
+Model.save()
+Model.create()
+
+options: {
+  raw: true, // boolean // default: false // If set to true, values will ignore field and virtual setters.
+  returning: true // boolean // default: false // Appends RETURNING <model columns> to get back all defined values
+  logging // function // A function that gets executed while running the query to log the sql.
+  benchmark // boolean // default: false // Pass query execution time in milliseconds as second argument to logging function (options.logging).
+  transaction // Transaction to run query under
+
+  where: {},
+  limit: 10,
+  offset: 5,
+  order: [],
+  include: [],
+  attributes: [],
+  transaction
+  exclude: [],
+  group: [],
+  subQuery: false
+}
+
+Model.count()
+Model.increment()
+Model.decrement()
+
+Model.destroy()
+
+Eager Loading : https://sequelize.org/docs/v6/advanced-association-concepts/eager-loading/
+  Task.findAll({ include: User });
+  User.findAll({ include: Task });
+
+  Fetching an Aliased association
+    User.findAll({
+      include: { model: Tool, as: 'Instruments' },
+    });
+    [
+      {
+        "name": "John Doe",
+        "id": 1,
+        "Instruments": [
+          {
+            "name": "Scissor",
+            "id": 1,
+            "userId": 1
+          }
+        ]
+      }
+    ]
+    User.findAll({ include: 'Instruments' }); // Also works
+    User.findAll({ include: { association: 'Instruments' } }); // Also works
+
+  Required eager loading
+
+
+</pre>
